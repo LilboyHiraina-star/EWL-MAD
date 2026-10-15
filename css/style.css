@@ -1,0 +1,468 @@
+/* Reset basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Couleurs de base de la marque (on part sur un duo Bleu Marine de confiance et Orange dynamique) */
+:root {
+    --primary-blue: #0a2540;
+    --accent-orange: #ff6b00;
+    --light-grey: #f4f7f6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo h2 {
+    color: var(--primary-blue);
+}
+
+.logo span {
+    color: var(--accent-orange);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-orange);
+}
+
+.btn-contact {
+    background-color: var(--accent-orange);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-contact:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* Compense la navbar */
+}
+
+.hero-content {
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Barre de Tracking */
+.tracking-box {
+    display: flex;
+    justify-content: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.tracking-box input {
+    width: 70%;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.tracking-box button {
+    width: 30%;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tracking-box button:hover {
+    background-color: #e65c00;
+}
+
+/* =========================================
+   SECTION SERVICES
+   ========================================= */
+.services-section {
+    padding: 80px 50px;
+    background-color: #f8f9fa; /* Un gris très clair pour faire ressortir les cartes blanches */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 10px;
+}
+
+.section-title h2 span {
+    color: var(--primary-green);
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Grille des services */
+.services-grid {
+    display: grid;
+    /* Ça crée des colonnes automatiques : s'il y a de la place, ça s'aligne, sinon ça passe à la ligne (parfait pour les téléphones) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Les cartes individuelles */
+.service-card {
+    background: var(--pure-white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: all 0.3s ease; /* Permet une animation fluide */
+    border-bottom: 4px solid transparent;
+}
+
+/* L'EFFET COOL AU SURVOL (Hover) */
+.service-card:hover {
+    transform: translateY(-10px); /* Soulève la carte de 10 pixels */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* Augmente l'ombre */
+    border-bottom: 4px solid var(--accent-red); /* Fait apparaître une ligne rouge en bas */
+}
+
+/* Style des icônes à l'intérieur des cartes */
+.service-card .icon {
+    font-size: 3rem;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .icon {
+    transform: scale(1.1); /* Grossit légèrement l'icône au survol */
+}
+
+.service-card h3 {
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Le lien "En savoir plus" */
+.read-more {
+    text-decoration: none;
+    color: var(--primary-green);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--accent-red);
+}
+
+/* =========================================
+   SECTION À PROPOS & CHIFFRES CLÉS
+   ========================================= */
+.about-section {
+    padding: 80px 50px;
+    background-color: var(--pure-white); /* Retour au blanc pour contraster avec le gris des services */
+}
+
+.about-container {
+    display: flex; /* Aligne le texte et les stats côte à côte */
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1; /* Prend 50% de la largeur */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+}
+
+.about-text h2 span {
+    color: var(--primary-green);
+}
+
+.about-text p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Liste des avantages avec les "check" verts */
+.about-features {
+    list-style: none;
+}
+
+.about-features li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+.about-features li i {
+    color: var(--accent-red); /* Les petites icônes en rouge pour rappeler le drapeau */
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+/* Grille 2x2 pour les chiffres clés */
+.about-stats {
+    flex: 1; /* Prend les autres 50% */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: #f8f9fa;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-green); /* Une belle bordure verte sur le côté */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stat-box h3 {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    color: var(--dark-text);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Adaptation pour les téléphones portables (Responsive Design) */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column; /* Empile le texte AU-DESSUS des stats sur petit écran */
+    }
+    
+    .about-stats {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SECTION CONTACT
+   ========================================= */
+.contact-section {
+    padding: 80px 50px;
+    background-color: #f8f9fa; /* Fond légèrement gris pour délimiter avec le blanc du dessus */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Partie Coordonnées (Gauche) */
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.info-box i {
+    font-size: 2rem;
+    color: var(--accent-red);
+    background: #fef0f1; /* Un petit fond rouge très clair pour l'icône */
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.info-box h4 {
+    color: var(--dark-text);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.info-box p {
+    color: #666;
+}
+
+/* Partie Formulaire (Droite) */
+.contact-form {
+    flex: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+/* Quand on clique dans un champ, la bordure devient verte */
+.input-group input:focus, 
+.input-group select:focus, 
+.input-group textarea:focus {
+    border-color: var(--primary-green);
+}
+
+.btn-submit {
+    background-color: var(--primary-green);
+    color: var(--pure-white);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: #005f2b;
+    transform: translateY(-2px);
+}
+
+.btn-submit i {
+    margin-left: 10px;
+}
+
+/* Responsive pour les téléphones */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column; /* Superpose les infos et le formulaire */
+    }
+}
+/* Défilement fluide pour toute la page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Évite que la barre de navigation fixe (qui reste en haut) ne cache les titres des sections quand on clique sur le menu */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* =========================================
+   ADAPTATION MOBILE DE LA NAVBAR
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Empile le logo au-dessus du menu */
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap; /* Permet aux liens d'aller à la ligne si besoin */
+        justify-content: center;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem; /* Réduit un peu le titre principal sur téléphone */
+    }
+}
